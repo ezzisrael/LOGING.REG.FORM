@@ -61,3 +61,37 @@ checkbtn.grid(row=8, column=3)
 #sumbitting
 Button(text='Submit', command=getvals).grid(row=9, column=3)
 root.mainloop()
+
+#OR_________
+
+from tkinter import *
+root = Tk()
+root.configure(background = 'gray')
+root.geometry('500x300')
+
+
+def getvals():
+    print('ACCEPT')
+    
+Label(root, text='REGISTRATION FORM', font='ar 16 bold', bg='gray').grid(row=0, column=1)
+
+name = Label(root, text='NAME', font='bold', bg='gray').grid(row=1, column=0)
+phone= Label(root, text='PHONE', font='bold', bg='gray').grid(row=1, column=0)
+gender = Label(root, text='GENDER', font='bold', bg='gray').grid(row=2, column=0)
+address= Label(root, text='ADDRESS', font='bold', bg='gray').grid(row=2, column=0)
+
+namevalue = StringVar
+phonevalue = StringVar
+gendervalue = StringVar
+addressvalue = StringVar
+checkvalue = IntVar
+
+nameentry = Entry(root, textvariable= namevalue).grid(row=1, column=1)
+phoneenty = Entry(root, textvariable= phonevalue).grid(row=2, column=1)
+genderentry = Entry(root, textvariable= gendervalue).grid(row=3, column=1)
+addressentry = Entry(root, textvariable= addressvalue).grid(row=4, column=1)
+
+checkbtn = Checkbutton(text='remember me?', variable= checkvalue).grid(row=5, column=1)
+Button(text='Submit', command=getvals).grid(row=6, column=1)
+
+root.mainloop()
